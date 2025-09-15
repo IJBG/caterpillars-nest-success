@@ -1,0 +1,42 @@
+The columns in the included spreadsheet are as follows:
+
+SiteName: Name of the Caterpillars Count! site
+SiteDescription: Description of the Caterpillars Count! site
+Latitude: Latitude of the Caterpillars Count! site
+Longitude: Longitude of the Caterpillars Count! site
+Region: State or Province of the Caterpillars Count! site
+LocalDate: Date of the observation
+LocalTime: Time of the observation
+SurveyLocationCode: Unique 3-letter code specifying a particular survey branch
+Circle: Circle number of the survey branch
+Orientation: A-E, identifying one of the 5 survey branches within the specified circle
+PlantSpeciesMarkedByObserver: Plant species of the survey branch as entered by the local site coordinator
+OfficialPlantSpecies: Standardized plant species name as specified by a site administrator
+PlantIsConiferous: Is the plant a conifer; 0 = no, 1 = yes
+ObservationMethod: Survey method, either "Visual" or "Beat Sheet"
+SurveyNotes: Any notes applicable to the survey branch as a whole
+WetLeavesOrNeedles: Were the leaves (or, if the plant is coniferous, needles) wet at the time of the survey; 0 = no, 1 = yes
+NumberOfLeaves: For coniferous plants, -1. For non-coniferous plants, number of leaves examined on the survey branch; for Visual surveys this is 50, but it may be variable for Beat Sheet surveys
+AverageLeafLength: For coniferous plants, -1. For non-coniferous plants, average length of the leaf (or leaflet) blade not counting the petiole, in cm
+HerbivoryScore: For coniferous plants, -1. For non-coniferous plants, categorical herbivory score for the set of leaves examined; 0 = None, 1 = Trace (<5%), 2 = Light (5-10%), 3 = Moderate (10-25%), 4 = Heavy (>25%)
+AverageNeedleLength: For coniferous plants, average length of the needle, in cm. For non-coniferous plants, -1
+LinearBranchLength: For coniferous plants, a rough sum of the branch lengths observed, in cm. For non-coniferous plants, -1
+OriginalArthropodGroup: Originally reported arthropod group
+UpdatedArthropodGroup: Arthropod group that includes any corrected id's based on iNaturalist user feedback
+ArthropodLength: Length of the observed arthropod from the tip of the head to the tip of the abdomen, in mm (doesn't include antennae or legs)
+ArthropodQuantity: Number of arthropods of a given group and length observed
+ArthropodPhotoURL: For observations with photos, a link to the observation on iNaturalist
+ArthropodNotes: Any notes applicable to the arthropod observed
+IsCaterpillarAndIsHairy: If the observed arthropod is a caterpillar that is significantly hairy or spiny, 1, otherwise 0
+IsCaterpillarAndIsInLeafRoll: If the observed arthropod is a caterpillar that is inside a rolled or folded leaf, 1, otherwise 0
+IsCaterpillarAndIsInSilkTent: If the observed arthropod is a caterpillar that is inside a silk tent, 1, otherwise 0
+IsButterflyOrMothAndIsPupa: If the observed arthropod is a butterfly or moth and is in the pupa stage, 1, otherwise 0
+OriginalIsBeetleLarva: If the observed arthropod is a beetle larva, 1, otherwise 0 (as specified by the original observer)
+UpdatedIsBeetleLarva: If the observed arthropod is a beetle larva, 1, otherwise 0 (includes any corrected id's based on iNaturalist user feedback)
+OriginalIsSawflyLarva: If the observed arthropod is a sawfly larva, 1, otherwise 0 (as specified by the original observer)
+UpdatedIsSawflyLarva: If the observed arthropod is a sawfly larva, 1, otherwise 0 (includes any corrected id's based on iNaturalist user feedback)
+
+
+Recommended citation:
+
+Caterpillars Count! 2025. Foliage Arthropod Data. Data type: Raw Data. 01/01/2002-12/31/2025 for Site: All sites. Chapel Hill, North Carolina, USA. Data set accessed 09/15/2025 at https://caterpillarscount.unc.edu.

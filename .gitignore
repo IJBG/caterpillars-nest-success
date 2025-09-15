@@ -47,3 +47,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Data that is too big to be stored on github
+data/nestwatch/attempts_locs_20250617.csv
+data/nestwatch/checks_20250617.csv
+data/caterpillars-count/CaterpillarsCountData.csv
