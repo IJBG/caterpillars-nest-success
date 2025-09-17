@@ -90,13 +90,14 @@ table(cc_nest_scaled$n_nest_attempts_degree_quarter >= 20)
 #185 with at least 20 nest attempts within 25km in that year
 
 
-#rather than summarize, use mutate to get the n for the various groups
-#then distinct based on the smallest group at the end.
+#summarize how many nests (can be double counted if they close to multiple sites) are within each year
 summarize_cc_nests <- cc_nest_scaled %>%
   group_by(Year) %>%
   summarize(n_cc_sites = n(),
-            n_nesting_attempts = sum(n_nest_attempts))
-write.csv(summarize_cc_nests, "data/n_datapoints_per_year_degree_full.csv", row.names = FALSE)
+         n_nesting_attempts_degree_full = sum(n_nest_attempts_degree_full),
+         n_nesting_attempts_degree_half = sum(n_nest_attempts_degree_half),
+         n_nesting_attempts_degree_quarter = sum(n_nest_attempts_degree_quarter)) 
+write.csv(summarize_cc_nests, "data/n_datapoints_per_year.csv", row.names = FALSE)
 #one note of caution is this doesn't account at all for the fact that some sites are close to one another. BUT, I think that will just be something I incorporate into my model?
 
 ######################## mapping
