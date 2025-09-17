@@ -103,11 +103,6 @@ write.csv(summarize_cc_nests, "data/n_datapoints_per_year.csv", row.names = FALS
 ######################## mapping
 
 #get state boundaries for context
-# states <- c("NC", "MA", "MD", "CT", "MI", "ON", "VA", "SC", "TN", "NY",
-#             "GA", "CA", "OR", "UT", "ME", "OH", "WI", "DC", "TX", "RI", 
-#             "PA", "MO", "IA", "MN", "AK", "AR", "WV", "IN", "NJ", "KY", 
-#             "AB", "NV", "AL", "NH", "NM", "IL", "KS", "LA")
-
 states <- c("AB", "AL", "CA", 'CT', "DC", 'GA', "IA", "IL", 'KS', 
             'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'NC', 'NH',
             'NM', 'NV', 'NY', 'OH', 'OK', 'ON', 'PA', 'RI', 'SC',
@@ -123,25 +118,22 @@ cc_points <- st_as_sf(cc_locations, coords = c("Longitude", "Latitude"),
                       crs = 4326) %>%
              st_transform(crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=-100 +lat_0=35")
 
-
+#points scaled by data availability in each year
 cc_nest_scaled_points <-
   st_as_sf(cc_nest_scaled, 
            coords = c("Longitude", "Latitude"), 
            crs = 4326) %>%
   st_transform(crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=-100 +lat_0=35")
 
+#nestwatch points
 nw_points <- st_as_sf(nest_pch, coords = c("roundLat", "roundLon"),
-                      crs = 4326)
-                      #crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=-100 +lat_0=35")
+                      crs = 4326) %>%
+  st_transform(crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=-100 +lat_0=35")
 
-#set colors for states with/without CC! site
-cols <- c("gray95", rgb(93/255, 156/255, 47/255))
 
-#get bounding box coordinates
-st_bbox(cc_points)
-#xmin       ymin       xmax       ymax 
-#-122.60038   13.46673   75.69135   55.42597 
-
+#!!!!!!!!WIP: make a map of data availability for every year
+#maybe best to, rather than scaling, do the method that Bella had and plot all the nestwatch points
+#just only the ones within z given range of a cc! site
 year = 2024
 
 
